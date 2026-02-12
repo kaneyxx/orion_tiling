@@ -160,16 +160,16 @@ python patch_extraction_nolabel.py \
 
 ## Visualizer
 
-`app.py` is a Gradio-based tool for browsing extracted tiles interactively.
+`visualizer.py` is a Gradio-based tool for browsing extracted tiles interactively.
 
 ### Setup
 
-Update `DATASET_DIR` at the top of `app.py` to point to your output directory (the directory containing subject folders with `tiles.h5` and `HE/` subdirectories).
+Update `DATASET_DIR` at the top of `visualizer.py` to point to your output directory (the directory containing subject folders with `tiles.h5` and `HE/` subdirectories).
 
 ### Launch
 
 ```bash
-python app.py
+python visualizer.py
 # Opens at http://localhost:7866
 ```
 
