@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Output files
+*.h5
+*.hdf5
+*.png
+*.log
+
+# Default directories
+output/
+data/
+gating/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
