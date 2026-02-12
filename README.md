@@ -158,6 +158,44 @@ python patch_extraction_nolabel.py \
     └── clahe_applied
 ```
 
+## Visualizer
+
+`app.py` is a Gradio-based tool for browsing extracted tiles interactively.
+
+### Setup
+
+Update `DATASET_DIR` at the top of `app.py` to point to your output directory (the directory containing subject folders with `tiles.h5` and `HE/` subdirectories).
+
+### Launch
+
+```bash
+python app.py
+# Opens at http://localhost:7866
+```
+
+### Features
+
+- **Subject selector**: Browse all subjects that have `tiles.h5`
+- **Coordinate navigator**: Step through tiles with dropdown or prev/next
+- **Thumbnail overview**: Click on the H&E overview image to jump to any tile
+- **14-channel view**: Displays H&E + 13 biomarker RGB patches side-by-side at the same coordinate
+- Biomarker images are loaded from HDF5 (R channel + shared G/B), H&E from PNG files
+
+### Expected Data Layout
+
+```
+{DATASET_DIR}/
+├── CRC01/
+│   ├── tiles.h5                    # biomarker HDF5
+│   ├── HE/
+│   │   ├── CRC01_HE_0_0.png
+│   │   ├── CRC01_HE_1024_0.png
+│   │   └── ...
+│   └── CRC01_HE_thumbnail.png     # auto-generated on first load
+├── CRC02/
+│   └── ...
+```
+
 ## Normalization Method
 
 Gating-based log-transform normalization:
